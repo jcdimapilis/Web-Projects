@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Furball of Lies!</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas,vcon,vbgd,vbgd2,vraven,vpabu;
+var imgx=0, imgy=0;
+
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vbgd = document.getElementById("bgd"); //bgd
+	//animals
+	vraven = document.getElementById("raven");
+	vpabu = document.getElementById("pabutalking");
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,600);
+	setInterval("animate()",200);
+}
+
+var counter1 = 0; counter2 = 0; 
+var vxraven, vxpabu; //moving coordinates
+var ravenx = 0, pabux = 0; //starting coordinates
+
+function animate(){
+	
+	counter1++; counter2++;
+	
+	if (counter1 > 3 )counter1=0;
+	//vxfish1+=10; vxfish2+=3; vxfish3+=15; vxgull-=2; vygull-=2;
+	ravenx = counter1 * 72;
+	pabux = counter1 * 200;
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,600);
+	vcon.drawImage(vraven,ravenx,imgy,72,100,50,300,250,150);
+	vcon.drawImage(vpabu,pabux,imgy,200,260,300,300,200,260);
+}
+</script>
+
+
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 5: Furball of Lies!</h2>
+<h3>Scene #1: Here Pabu is led to believe by the evil raven that her parents were poor and are dead.</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>Back to Pabu!</h4>
+<textarea rows=10 cols=50>
+On a cold winter's night, while the owls howled and the wolves cried - 
+the sound of a distant wail could be heard. 
+In a small crevice formed by jagged rocks, a still small voice could be heard.  
+One of the King and the Queen's wicked attendants was telling Pabu about her past. 
+"I was the daughter of a peddler? My parents are dead?" Pabu asked. 
+"I'm afraid so, I am sorry dear kitten" answered the raven.  
+</textarea>
+
+<br>
+<br>
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/dark forest.jpg" width="1102" height="620">
+<img id="raven" alt="" src="images/raven.png" width="284" height="100">
+<img id="pabutalking" alt="" src="images/pabutalking.png" width="800" height="195">
+
+<br>
+<!--Button for Scene 2
+<form action="Chapter3Scene2.html">
+<input type=submit value="Proceed to Scene 2">
+</form>-->
+
+<input type="button" value="Previous Page" onclick="location.href='../Chapter4/Chapter4Scene4.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter5Scene2.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+</body></center>
+
+</html>

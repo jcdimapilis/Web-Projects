@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Why Do Kittens Love Shiny Things?</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas, vcon, vimg1, vimg2, vimg3, vimg4;
+var imgx=0, imgy=0;
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vimg1 = document.getElementById("bgd"); //bgd
+	vimg2 = document.getElementById("break");
+	vimg3 = document.getElementById("marble");
+	//vimg4 = document.getElementById("balloon");
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,200,200,290,450,100,100);
+	vcon.drawImage(vimg3,imgx,imgy,200,200,370,430,150,150);
+	//vcon.drawImage(vimg4,0,0,424,359,450,130,150,150);
+	setInterval("animate()",500);
+}
+var counter = 0; 
+function animate(){
+	counter++;
+    if (counter>3) counter=0;
+    imgx = counter*200;
+	marblex = counter*200;
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,200,200,290,450,100,100);
+	vcon.drawImage(vimg3,imgx,imgy,200,200,370,430,150,150);
+	//vcon.drawImage(vimg4,0,0,424,359,450,130,150,150);
+}
+</script>
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 6: "Why Do Kittens Love Shiny Things?"</h2>
+<h3>Scene #2: Pabu accidentally broke the flower vase.</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>"Oh no!!!"</h4>
+<textarea rows=13 cols=40>One day, Pabu saw a marble. Pabu was amazed with the marble and nobody knew why. 
+She played all day with the marble and everything was good, until the marble slipped from her, and she accidentally toppled a vase while trying to catch it. 
+Dara's parents got angry. "Get rid of it now! It ruined your mother's favourite vase!" exclaimed her Dad.
+</textarea>
+ 
+<br>
+<br>
+
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/livingroom2.jpg" width="400" height="600">
+<img id="break" alt="" src="images/break.png" width="400" height="100">
+<img id="marble" alt="" src="images/marble.png" width="400" height="100">
+
+
+<br>
+<!--Buttons-->
+
+
+<!--
+<form action="Chapter3Scene1.html"><input type=submit value="Previous Scene"></form>
+<form action="Chapter3Scene3.html"><input type=submit value="Next Scene"></form>
+-->
+<input type="button" value="Previous Page" onclick="location.href='Chapter6Scene1.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter6Scene3.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+
+
+</body></center>
+
+</html>
