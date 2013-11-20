@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Not Your Ordinary Kitten!</title>
+<!--Internal CSS-->
+<style type="text/css">
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+img {display:none;}
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+}
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+}
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+</style>
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas, vcon, vimg1, vimg2;
+var imgx=0, imgy=0;
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vimg1 = document.getElementById("bgd"); //bgd
+	vimg2 = document.getElementById("pabu");
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,195,190,530,260,100,100);
+	setInterval("animate()",300);
+}
+var counter = 0; var cx;
+function animate(){
+	counter++;
+    if (counter>3) counter = 0;
+    imgx = counter*200;
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,195,190,530,260,100,100);
+}
+</script>
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 2: Not Your Ordinary Kitten!</h2>
+<h3>Scene #1: Pabu's arrival at the farm!</h3>
+<hr>
+</head>
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+<h4>Welcome to the farm, little kitten!</h4>
+
+<textarea rows=13 cols=40>In the grange, the kitten met many animals. 
+There were several times that the kitten had difficulty in understanding them, 
+but she grew accustomed to the 'farm ways.'
+</textarea>
+<br>
+<br>
+
+<!--Canvass for Animation-->
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+<img id="bgd" alt="" src="images/farm2.png" width="800" height="600">
+<img id="pabu" alt="" src="images/pabu.png" width="400" height="100">
+
+<br>
+
+<!--Buttons-->
+<!--
+<form action="Chapter3Scene1.html"><input type=submit value="Previous Scene"></form>
+<form action="Chapter3Scene3.html"><input type=submit value="Next Scene"></form>
+-->
+<input type="button" value="Previous Page" onclick="location.href='../Chapter1/Chapter1Scene4.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter2Scene2.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+
+</body></center>
+</html>

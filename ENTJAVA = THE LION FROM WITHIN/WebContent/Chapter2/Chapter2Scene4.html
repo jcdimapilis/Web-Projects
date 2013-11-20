@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Not Your Ordinary Kitten!</title>
+<!--Internal CSS-->
+<style type="text/css">
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+img {display:none;}
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+}
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+}
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+</style>
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas, vcon, vimg1, vimg2, vimg3;
+var imgx=0, imgy=0;
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vimg1 = document.getElementById("bgd"); //bgd
+	vimg2 = document.getElementById("pabu");
+	vimg3 = document.getElementById("flabby")
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,195,190,200,260,120,120);
+	vcon.drawImage(vimg3,imgx,imgy,190,190,450,260,120,120);
+	setInterval("animate()",500);
+}
+var counter = 0; var birdx = 450;
+function animate(){
+	counter++;
+    if (counter>3) counter=0;
+    imgx = counter*200;
+	birdx = counter * 190
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,195,190,200,260,120,120);
+	vcon.drawImage(vimg3,birdx,imgy,190,190,450,240,120,120);
+}
+</script>
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 2: Not Your Ordinary Kitten!</h2>
+<h3>Scene #4: First conversation.</h3>
+<hr>
+</head>
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+<h4>Pabu, a nice name.</h4>
+<textarea rows=13 cols=40>"Hi I'm Flabby. What's your name?" said the bird. 
+"I really haven't thought about it much, but others just call me kitty or kitten" answered the kitten. 
+"I''ll call you Pabu then. I always wanted to have a friend named Pabu" said the bird. 
+"Okay, then Pabu it is!" reclaimed the kitten.
+</textarea>
+<br>
+<br>
+
+<!--Canvass for Animation-->
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+<img id="bgd" alt="" src="images/pond.png" width="800" height="600">
+<img id="pabu" alt="" src="images/pabu.png" width="400" height="100">
+<img id="flabby" alt="" src="images/flabby.png" width="400" height="100">
+
+<br>
+<!--Buttons-->
+
+
+<!--
+<form action="Chapter3Scene1.html"><input type=submit value="Previous Scene"></form>
+<form action="Chapter3Scene3.html"><input type=submit value="Next Scene"></form>
+-->
+<input type="button" value="Previous Page" onclick="location.href='Chapter2Scene3.html';">
+<input type="button" value="Next Page" onclick="location.href='../Chapter3/Chapter3Scene1.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+
+</body></center>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>The Difference Between a Roar and a Meow</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas,vcon,vbgd,vbgd2,vfish1,vfish2,vfish3,vgull,vpabu;
+var imgx=0, imgy=0;
+
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vbgd = document.getElementById("bgd"); //bgd
+	vbgd2 = document.getElementById("bgd2"); //bgd2
+	//animals
+	vfish3 = document.getElementById("fish3");
+	vgull = document.getElementById("gull");
+	vpabu = document.getElementById("pabujump");
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,600);
+	setInterval("animate()",200);
+}
+
+var counter1 = 0; counter2 = 0; 
+var vxfish1 = 55, vxfish2 = 220, vxfish3 = 120, vxgull = 500, vygull = 300; //moving coordinates
+var fish3x = 0, gullx = 0, pabux = 0; //starting coordinates
+
+function animate(){
+	
+	counter1++; counter2++;
+	
+	if (counter1 > 3 )counter1=0;
+	vxfish1+=10; vxfish2+=3; vxfish3+=15; vxgull-=2; vygull-=2;
+	if (vxfish1 >= 600) vxfish1 = 55;
+	if (vxfish2 >=800) vxfish2 = 220;
+	fish3x = counter1 * 100;
+	gullx = counter1 * 110;
+	pabux = counter1 * 190;
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,600);
+	vcon.drawImage(vfish3,fish3x,imgy,100,41,vxfish1,300,50,50);
+	vcon.drawImage(vfish3,fish3x,imgy,100,41,vxfish2,250,50,50);
+	vcon.drawImage(vfish3,fish3x,imgy,100,41,vxfish3,400,50,50);
+	vcon.drawImage(vgull,gullx,imgy,110,53,vxgull,vygull,70,70);
+	vcon.drawImage(vpabu,pabux,imgy,190,260,300,400,200,260);
+}
+</script>
+
+
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 3: The Difference Between a Roar and a Meow!</h2>
+<h3>Scene #1: Pabu imagines that there are a lot of things she can't do.</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>Back to Pabu!</h4>
+<textarea rows=10 cols=50>As the events in Pabu's life progressed, 
+she then learned that life is difficult for a small cat like her.
+She can't really do things much like a bird, 
+she does not also have the capabilities of a fish that can swim. 
+She can jump, but only to the extent that her weak legs allow.
+</textarea>
+
+<br>
+<br>
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/sea1.png" width="615" height="410">
+<img id="bgd2" alt="" src="images/sea.jpg" width="615" height="410">
+<img id="fish3" alt="" src="images/fish 3.png" width="100" height="41">
+<img id="gull" alt="" src="images/gull.png" width="110" height="53">
+<img id="pabujump" alt="" src="images/pabujump.png" width="190" height="260">
+
+<br>
+<!--Button for Scene 2
+<form action="Chapter3Scene2.html">
+<input type=submit value="Proceed to Scene 2">
+</form>-->
+
+<input type="button" value="Previous Page" onclick="location.href='../Chapter2/Chapter2Scene4.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter3Scene2.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+</body></center>
+
+</html>

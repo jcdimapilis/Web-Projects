@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>The Difference Between a Roar and a Meow</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas,vcon,vbgd,vbird,vpabu;
+var imgx=0, imgy=0;
+
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vbgd = document.getElementById("bgd"); //bgd
+	//animals
+	vbird = document.getElementById("bird");
+	vpabu = document.getElementById("pabueat");
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,700);
+	setInterval("animate()",300);
+}
+
+var counter1 = 0; counter2 = 0; 
+var vxpabu = 150; vypabu =390; vxbird1 = 50; vxbird2 = 80; vxbird3 = 100; vxbird4 = 80; vxbird5 = 50;
+//moving coordinates
+var pabux = 0; //starting coordinates
+
+function animate(){
+	
+	counter1++; counter2++;
+	
+	if (counter1 > 3)counter1=0;
+	pabux = counter1 * 550;
+	birdx = counter1 * 62;
+	vxbird1+=2;vxbird2+=2;vxbird3+=2;vxbird4+=2;vxbird5+=2;
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,800,700);
+	vcon.drawImage(vbird,birdx,imgy,62,35,vxbird1,40,70,40);
+	vcon.drawImage(vbird,birdx,imgy,62,35,vxbird2,70,70,40);
+	vcon.drawImage(vbird,birdx,imgy,62,35,vxbird3,100,70,40);
+	vcon.drawImage(vbird,birdx,imgy,62,35,vxbird4,130,70,40);
+	vcon.drawImage(vbird,birdx,imgy,62,35,vxbird5,160,70,40);
+	if (vxbird1 == 600){vxbird1 = 50; vxbird2 = 80; vxbird3 = 100; vxbird4 = 80; vxbird5 = 50;}
+	vcon.drawImage(vpabu,pabux,imgy,550,200,vxpabu,vypabu,550,200);
+}
+</script>
+
+
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 3: The Difference Between a Roar and a Meow!</h2>
+<h3>Scene #4: Pabu and Flabby met again to eat what Flabby retrieved</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>Back to Pabu!</h4>
+
+<textarea rows=12 cols=50>
+Enraged, Pabu left the ponds and went to the forest to scout for food and for Flabby. 
+Unfortunately, all she was able to gather was a grape and a worn out fishbone. 
+When Flabby came back, they ate the fish that 
+Flabby brought and had fun doing so. However, Pabu was bothered. 
+She was not able to think well, so what she did was she talked to Flabby about her plans... 
+
+</textarea>
+<br>
+<br>
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/forest.jpg" width="803" height="800">
+<img id="pabueat" alt="" src="images/pabueat 2.png" width="550" height="200">
+<img id="bird" alt="" src="images/bird 2.png" width="62" height="35">
+
+<!--Button for going back to Scene 1
+<form action="Chapter3Scene1.html">
+<input type=submit value="Back to Chapter 3 Scene 1">
+</form>-->
+<br>
+<input type="button" value="Previous Page" onclick="location.href='Chapter3Scene3.html';">
+<input type="button" value="Next Page" onclick="location.href='../Chapter4/Chapter4Scene1.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+
+</body></center>
+
+</html>

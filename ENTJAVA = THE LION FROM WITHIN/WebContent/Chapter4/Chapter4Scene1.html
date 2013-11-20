@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>We Shall Embark On A Quest!</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas, vcon, vimg1, vimg2, vimg3;
+var imgx=0, imgy=0;
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vimg1 = document.getElementById("bgd"); //bgd
+	vimg2 = document.getElementById("pabu");
+	vimg3 = document.getElementById("flabby")
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,200,190,250,370,120,120);
+	vcon.drawImage(vimg3,imgx,imgy,190,190,450,250,120,120);
+	setInterval("animate()",500);
+}
+var counter = 0; var birdx = 450; var pabux = 250;
+function animate(){
+	counter++;
+    if (counter>3) counter=0;
+    imgx = counter*200;
+    pabux += 20;
+	birdx = counter*190;
+	vcon.drawImage(vimg1,-50,-150,850,750);
+	vcon.drawImage(vimg2,imgx,imgy,200,190,pabux,370,120,120);
+	vcon.drawImage(vimg3,birdx,imgy,190,190,450,250,120,120);
+	
+}
+</script>
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 4: "We Shall Embark On A Quest!"</h2>
+<h3>Scene #1: The quest starts.</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>"Pabu is decided!"</h4>
+<textarea rows=13 cols=40>"I've decided!" shouted Pabu, "I'm going to leave the wild and find my own place." 
+"Don't do anything rash. Don't do anything that you'll regret." Answered Flabby the bird. 
+"No. I have to do this. I have to know who I really am. Okay? I'm not asking you to come with me" said Pabu. 
+"If there's nothing I can do to stop you, I'll come with you, but we have to ask for Doe's approval." 
+</textarea>
+
+<br>
+<br>
+
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/clearfarm.jpg" width="800" height="600">
+<img id="pabu" alt="" src="images/paburight.png" width="400" height="100">
+<img id="flabby" alt="" src="images/flabby.png" width="400" height="106">
+
+<br>
+<!--Buttons-->
+
+
+<!--
+<form action="Chapter3Scene1.html"><input type=submit value="Previous Scene"></form>
+<form action="Chapter3Scene3.html"><input type=submit value="Next Scene"></form>
+-->
+<input type="button" value="Previous Page" onclick="location.href='../Chapter3/Chapter3Scene4.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter4Scene2.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+
+
+</body></center>
+
+</html>

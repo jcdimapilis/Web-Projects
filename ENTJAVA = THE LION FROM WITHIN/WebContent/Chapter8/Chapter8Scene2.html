@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>The Mirror Never Lies!</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 17px;
+text-indent: 80px;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+</style>
+
+<!-- javascript for Animation -->
+<script type="text/javascript">
+var  vcanvas,vcon,vbgd,vbgd2,vdara,vbook;
+var imgx=0, imgy=0;
+
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vbgd = document.getElementById("bgd"); //bgd
+	//animals
+	vdara = document.getElementById("dara");
+	vbook = document.getElementById("book");
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,1200,1000);
+	setInterval("animate()",200);
+}
+
+var counter1 = 0; counter2 = 0;
+var darax = 0, bookx = 0; //starting coordinates
+
+function animate(){
+	
+	counter1++; counter2++;
+	
+	if (counter1 > 3 ) counter1=0;
+	//vxfish1+=10; vxfish2+=3; vxfish3+=15; vxgull-=2; vygull-=2;
+	darax = counter1 * 190;
+	bookx = counter1 * 137;
+	//vcon.drawImage(vbgd2,0,0,800,600);
+	vcon.drawImage(vbgd,0,0,1200,1000);
+	vcon.drawImage(vdara,darax,imgy,190,175,150,30,475,437.5);
+	vcon.drawImage(vbook,bookx,imgy,137,138,70,50,685,690);
+}
+</script>
+
+
+<h1>The Lion From Within</h1>
+<hr>
+<h2>Chapter 7: The King and the Queen of the Jungle</h2>
+<h3>Scene #2: Dara reads the book that Pabu brought and is surprised with what she reads.</h3>
+<hr>
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Text Area for Scene Explanation -->
+
+<h4>Back to Pabu!</h4>
+<textarea rows=10 cols=50>
+"Let me read this book... 
+It tells much about the animals in your kingdom, but oooo - 
+these are the kings and the queens of the jungle and they had a missing daughter... 
+And that daughter is..." 
+</textarea>
+
+<br>
+<br>
+<!--Canvass for Animation-->
+
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+
+<img id="bgd" alt="" src="images/clean room.jpg" width="474" height="356">
+<img id="dara" alt="" src="images/darareading.png" width="1394" height="259">
+<img id="book" alt="" src="images/reading.png" width="1394" height="259">
+
+<br>
+<!--Button for Scene 2
+<form action="Chapter3Scene2.html">
+<input type=submit value="Proceed to Scene 2">
+</form>-->
+
+<input type="button" value="Previous Page" onclick="location.href='Chapter8Scene1.html';">
+<input type="button" value="Next Page" onclick="location.href='Chapter8Scene3.html';">
+<br>
+<input type="button" value="Table of Contents" onclick="location.href='../TableofContents.html';">
+</body></center>
+
+</html>

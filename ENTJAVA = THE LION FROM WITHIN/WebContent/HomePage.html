@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>The Lion From Within</title>
+
+<!--Internal CSS-->
+<style type="text/css">
+
+#anicanvas {
+border-width: 5px;
+border-style: inset;
+border-color: rgb(61,145,64)
+}
+
+img {display:none;}
+
+p {
+font-family: Georgia;
+font-size: 25px;
+text-indent: 80px;
+text-align:center;
+}
+
+hr {
+width: 90%;
+border: none;
+border-top: 5px solid rgb(48,128,20);
+border-bottom: 5px solid rgb(48,128,20);
+
+}
+
+h1 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia; 
+font-size: 40px;
+
+}
+
+h2 {
+color: rgb(0,100,0);
+text-align: center;
+font-family: Georgia;
+font-size: 25px
+}
+
+h3 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+h4 {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+textarea {
+text-align: center;
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+body {
+border: solid;
+border-width: 10px;
+border-style:dotted solid;
+border-color: rgb(154,205,50);
+background-color: rgb(188,238,104);
+}
+
+form {
+color: rgb(0,100,0);
+font-family: Georgia;
+font-size: 15px;
+}
+
+ul
+{
+border:thick;
+border-color: rgb(154,205,50);
+list-style-type:circle;
+display:block;
+font-size: 25px;
+font-family: Georgia;
+text-align: center;
+margin:px;
+padding:px;
+}
+
+
+</style>
+<script type="text/javascript">
+var vcanvas, vimg1;
+
+function loadImage(){
+	vcanvas = document.getElementById("anicanvas");
+	vcon = vcanvas.getContext("2d");
+	vimg1 = document.getElementById("bgd"); //bgd
+	vcon.drawImage(vimg1,0,0,800,600);
+}
+
+</script>
+
+<div class = "navigation">
+<ul>
+<a href="HomePage.html"><span>Home</span></a>
+<a href="TableofContents.html"><span>Table of Contents</span></a>
+<a href="AboutPage.html"><span>About</span></a>
+</ul>
+</div>
+<hr>
+
+<!--Canvass for Animation-->
+<center>
+<canvas id="anicanvas" width="800" height="600" style="border-width:10px; border-style: inset;"> This Browser does not support HTML 5</canvas>
+<!-- images for display -->
+</center>
+<img id="bgd" alt="" src="images/title.png" width="400" height="600">
+<br>
+
+<p>This story tells of a kitten who travels throughout 
+the wild in search of her dreams and the reason of her existence. 
+Throughout the journey, the young cub discovers the value of honesty & integrity, 
+the importance of giving, and the true meaning of family.</p>
+
+</head>
+
+<center><body onload="loadImage()">
+
+<!--Canvass for Animation-->
+<br>
+<hr>
+</body></center>
+
+</html>
